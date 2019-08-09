@@ -10,13 +10,22 @@
 <h3>@Html.DisplayFor(model => model.Name)</h3>
 
 <p>
-    @Html.DisplayNameFor(model => model.Phone): @Html.DisplayFor(model => model.Phone)<br>
-    @Html.DisplayNameFor(model => model.Specialties): @Html.DisplayFor(model => model.Specialties)
+    @Html.DisplayNameFor(model => model.Specialties): @Html.DisplayFor(model => model.Specialties)<br>
+    @Html.DisplayNameFor(model => model.Phone): @Html.DisplayFor(model => model.Phone)
 </p>
 
-<p>@Html.ActionLink("Edit", "Edit", new { id = Model.StylistId }) | @Html.ActionLink("Delete", "Delete", new { id = Model.StylistId })</p>
+<p>@Html.ActionLink("↯ Edit", "Edit", new { id = Model.StylistId }) | @Html.ActionLink("☓ Delete", "Delete", new { id = Model.StylistId })</p>
 <hr>
+
 <h4>Clients</h4>
+
+@if (@ViewBag.Clients.Count == 0)
+{
+    <p>No Clients</p>
+} 
+
+<p>@Html.ActionLink("★ New Client", "Create", "Clients")</p>
+
 @foreach (Client client in @ViewBag.Clients)
 {
     <p>
@@ -25,7 +34,24 @@
         @client.Notes
     </p>
 }
+<hr>
 
-<p>@Html.ActionLink("Add Client", "Create", "Clients")</p>
+<h4>Appointments</h4>
 
-<p>@Html.ActionLink("Back", "Index")</p>
+@if (@ViewBag.Appointments.Count == 0)
+{
+    <p>No Upcoming Appointments</p>
+} 
+
+<p>@Html.ActionLink("★ New Appointment", "Create", "Appointments", new { id = Model.StylistId })</p>
+
+@foreach (Appointment appt in @ViewBag.Appointments)
+{
+    <p>
+        When: @appt.Date<br>
+        Client ID: @appt.ClientId<br>
+        Notes: @appt.Notes
+    </p>
+}
+<hr>
+<p>@Html.ActionLink("← Back", "Index")</p>
