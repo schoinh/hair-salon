@@ -1,10 +1,10 @@
-namespace ToDoList.Models
+namespace HairSalon.Models
 {
-    public class Item
+    public class Client
     {
-        public int ItemId { get; set; }
+        public int ClientId { get; set; }
         public string Description { get; set; }
-        public int CategoryId { get; set; }
-        public virtual Category Category { get; set; }
+        public int StylistId { get; set; }
+        public virtual Stylist Stylist { get; set; }
     }
 }

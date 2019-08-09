@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
-using ToDoList.Models;
+using HairSalon.Models;
 
-namespace ToDoList.Controllers
+namespace HairSalon.Controllers
 {
     public class HomeController : Controller
     {
