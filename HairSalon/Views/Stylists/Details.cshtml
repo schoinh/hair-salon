@@ -24,7 +24,7 @@
     <p>No Clients</p>
 } 
 
-<p>@Html.ActionLink("★ New Client", "Create", "Clients")</p>
+<p>@Html.ActionLink("★ New Client", "Create", "Clients", new { id = Model.StylistId })</p>
 
 @foreach (Client client in @ViewBag.Clients)
 {

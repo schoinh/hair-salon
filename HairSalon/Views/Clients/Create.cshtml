@@ -3,10 +3,12 @@
 }
 
 @model HairSalon.Models.Client
-<h4>Add a New Client</h4>
+<h4>Add a New Client for @ViewBag.Stylist.Name</h4>
 
 @using (Html.BeginForm())
 {
+    <input data-val="true" data-val-required="The StylistId field is required." id="StylistId" name="StylistId" type="hidden" value="@ViewBag.Stylist.StylistId">
+
     @Html.LabelFor(model => model.Name)
     @Html.TextBoxFor(model => model.Name)<br>
 
@@ -16,9 +18,7 @@
     @Html.LabelFor(model => model.Notes)
     @Html.TextBoxFor(model => model.Notes)<br>
 
-    @Html.LabelFor(model => model.Stylist)
-    @Html.DropDownList("StylistId")<br>
     <input type="submit" value="Add Client" class="btn btn-default"/> 
 }
 
-<p>@Html.ActionLink("Cancel", "Index", "Stylists")</p>
+<p>@Html.ActionLink("Cancel", "Details", "Stylists", new { id = @ViewBag.Stylist.StylistId })</p>
