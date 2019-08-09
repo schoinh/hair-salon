@@ -13,10 +13,16 @@
     @Html.HiddenFor(model => model.StylistId)
 
     @Html.LabelFor(model => model.FirstName)
-    @Html.EditorFor(model => model.FirstName)
+    @Html.EditorFor(model => model.FirstName)<br>
 
     @Html.LabelFor(model => model.LastName)
-    @Html.EditorFor(model => model.LastName)
+    @Html.EditorFor(model => model.LastName)<br>
+
+    @Html.LabelFor(model => model.Phone)
+    @Html.EditorFor(model => model.Phone)<br>
+
+    @Html.LabelFor(model => model.Specialties)
+    @Html.EditorFor(model => model.Specialties)<br>
 
     <input type="submit" value="Submit Changes" />
 }
