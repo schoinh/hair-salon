@@ -21,4 +21,4 @@
     <input type="submit" value="Add Appointment" class="btn btn-default"/> 
 }
 
-<p>@Html.ActionLink("Cancel", "Index", "Home")</p>
+<p>@Html.ActionLink("Cancel", "Details", "Stylists", new { id = @ViewBag.Stylist.StylistId })</p>
