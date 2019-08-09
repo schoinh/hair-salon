@@ -8,10 +8,16 @@
 @using (Html.BeginForm())
 {
     @Html.LabelFor(model => model.FirstName)
-    @Html.TextBoxFor(model => model.FirstName)
+    @Html.TextBoxFor(model => model.FirstName)<br>
 
     @Html.LabelFor(model => model.LastName)
-    @Html.TextBoxFor(model => model.LastName)
+    @Html.TextBoxFor(model => model.LastName)<br>
+
+    @Html.LabelFor(model => model.Phone)
+    @Html.TextBoxFor(model => model.Phone)<br>
+
+    @Html.LabelFor(model => model.Specialties)
+    @Html.TextBoxFor(model => model.Specialties)<br>
 
     <input type="submit" value="Add Sylist"/>
 }
