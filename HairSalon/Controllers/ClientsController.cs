@@ -24,7 +24,7 @@ namespace HairSalon.Controllers
 
         public ActionResult Create()
         {
-            ViewBag.StylistId = new SelectList(_db.Stylists, "StylistId", "Name");
+            ViewBag.StylistId = new SelectList(_db.Stylists, "StylistId", "FirstName");
             return View();
         }
 
@@ -33,7 +33,7 @@ namespace HairSalon.Controllers
         {
             _db.Clients.Add(client);
             _db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Create", "Appointments");
         }
 
         public ActionResult Details(int id)
