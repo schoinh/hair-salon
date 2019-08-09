@@ -9,9 +9,9 @@ namespace HairSalon.Controllers
 {
     public class ClientsController : Controller
     {
-        private readonly ToDoListContext _db;
+        private readonly HairSalonContext _db;
 
-        public ClientsController(ToDoListContext db)
+        public ClientsController(HairSalonContext db)
         {
             _db = db;
         }
@@ -24,7 +24,7 @@ namespace HairSalon.Controllers
 
         public ActionResult Create()
         {
-            ViewBag.StylistId = new SelectList(_db.Categories, "StylistId", "Name");
+            ViewBag.StylistId = new SelectList(_db.Stylists, "StylistId", "Name");
             return View();
         }
 
@@ -45,7 +45,7 @@ namespace HairSalon.Controllers
         public ActionResult Edit(int id)
         {
             var thisClient = _db.Clients.FirstOrDefault(clients => clients.ClientId == id);
-            ViewBag.StylistId = new SelectList(_db.Categories, "StylistId", "Name");
+            ViewBag.StylistId = new SelectList(_db.Stylists, "StylistId", "Name");
             return View(thisClient);
         }
 
