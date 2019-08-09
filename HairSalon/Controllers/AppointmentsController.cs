@@ -27,7 +27,7 @@ namespace HairSalon.Controllers
         {
             _db.Appointments.Add(appointment);
             _db.SaveChanges();
-            return RedirectToAction("Index", "Stylists");
+            return RedirectToAction("Details", "Stylists", new { id = appointment.StylistId });
         }
     }
 }
